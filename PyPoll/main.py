@@ -6,7 +6,7 @@ candidates = {}
 
 
 #path
-csvpath = os.path.join("..", "Resources", "PyPoll_Resources_election_data.csv")
+    csvpath = os.path.join("..", "Resources", "PyPoll_Resources_election_data.csv")
 
 with open(csvpath, 'r') as csvfile:
 #read csv
@@ -19,3 +19,6 @@ for row in csvreader:
             candidates[row[2]]+=1
         else:
             candidates[row[2]] = 1
+        total = candidates.values()
+        sum_votes = sum(total)
+    
