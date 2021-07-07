@@ -22,3 +22,6 @@ for row in csvreader:
         total = candidates.values()
         sum_votes = sum(total)
     
+        candidates_l = candidates.keys()
+#get percent (x/sum)x100 using perc_format          
+        votes_per = [f'{(x/sum_votes)*100:.3f}%' for x in candidates.values()]
