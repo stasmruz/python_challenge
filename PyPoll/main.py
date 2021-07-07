@@ -8,7 +8,7 @@ candidates = {}
 
 #path
 
-    csvpath = os.path.join("..", "Resources", "PyPoll_Resources_election_data.csv")
+csvpath = os.path.join("..", "Resources", "PyPoll_Resources_election_data.csv")
 
 with open(csvpath, 'r') as csvfile:
 
@@ -22,7 +22,7 @@ with open(csvpath, 'r') as csvfile:
 
 #for loop for total amount of votes using keys method
 
-for row in csvreader:
+    for row in csvreader:
         if row[2] in candidates.keys():
             candidates[row[2]]+=1
         else:
@@ -48,3 +48,11 @@ print("---------------------------")
 print(f" Total votes: {int(sum_votes)}")
 
 print("----------------------------")
+#for loop per %
+j = 0
+for candidate, vote in candidates.items():
+    print(f'{candidate}, {votes_per[j], (vote)}') 
+    j+=1
+print("---------------------------")
+print(f" Winner: {winner}")
+print("------------------------")
